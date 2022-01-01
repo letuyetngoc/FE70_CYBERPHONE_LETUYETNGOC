@@ -1,0 +1,74 @@
+.header {
+  background-color: $secondary-light;
+  box-shadow: 0 2px 4px #e2ebfc;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  .header__content {
+    .navbar {
+      .navbar-brand {
+        padding: 25px 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $primary-main;
+      }
+      button {
+        display: inline-block;
+        span {
+          font-size: 1.6rem;
+          line-height: 1.5em;
+          color: $secondary-dark;
+          i {
+            font-size: 2rem;
+          }
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        button {
+          display: none;
+        }
+      }
+      .navbar-collapse {
+        @media only screen and (min-width: 768px) {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .navbar-nav {
+          .nav-item {
+            a {
+              font-size: 1.5rem;
+              font-weight: 600;
+              color: $secondary-dark;
+              padding: 25px;
+              transition: 0.2s;
+              text-align: center;
+              &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                display: block;
+                background-color: #2a73dd;
+                transform: scaleX(0);
+                transition: $smooth;
+              }
+              &:hover {
+                color: $primary-main;
+                &::after {
+                  transform: scaleX(1);
+                }
+              }
+            }
+          }
+          .active {
+            a {
+              color: $primary-main;
+              &::after {
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
